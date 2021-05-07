@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`omit nodes by path 1`] = `
+"query GetClient($owner: String!) {
+  getClient(owner: $owner) {
+    owner
+    address
+    tel
+    logo {
+      category
+      description
+    }
+    updatedAt
+  }
+}
+"
+`;
+
+exports[`pick nodes by path 1`] = `
+"query GetClient($owner: String!) {
+  getClient(owner: $owner) {
+    owner
+    address
+    logo {
+      file {
+        id
+        key
+      }
+      category
+      description
+    }
+  }
+}
+"
+`;

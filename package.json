@@ -1,0 +1,49 @@
+{
+  "name": "partial-gql",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "yaquawa",
+  "description": "A tiny lib for extracting partial GraphQL AST from a given set of paths.",
+  "bugs": {
+    "url": "https://github.com/yaquawa/partial-gql/issues"
+  },
+  "homepage": "https://github.com/yaquawa/partial-gql#readme",
+  "keywords": [
+    "graphql"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.js"
+  },
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=12"
+  },
+  "scripts": {
+    "dev": "npm run build -- --watch",
+    "build": "rm -rf dist && tsup src/index.ts --sourcemap --dts --format cjs,esm",
+    "prepublishOnly": "npm run build",
+    "release": "npx git-ensure -a && npx bumpp --commit --tag --push",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "graphql-tag": "^2.12.4",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "ts-jest": "^26.5.6",
+    "ts-node": "^9.1.1",
+    "tslib": "^2.2.0",
+    "tsup": "^4.10.1",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "graphql": "^15.5.0"
+  }
+}
